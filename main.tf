@@ -36,7 +36,7 @@ module "consul-cluster" {
   cluster_nodes_ids        = var.cluster_nodes_ids
   cluster_nodes            = var.cluster_nodes
   cluster_nodes_public_ips = var.cluster_nodes_public_ips
-  vault_address            = var.vault_address
+  vault_address            = module.vault_cluster.vault_address
   dc_name                  = var.dc_name
 }
 
