@@ -37,10 +37,10 @@ variable "cluster_nodes_public_ips" {
   default = null
 }
 variable "nodes" {
-  type = list(string)
+  type = map(any)
 }
 variable "nodes_ids" {
-  type = map(any)
+  type = list(string)
 }
 variable "nodes_public_ips" {
   type = map(any)
