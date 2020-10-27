@@ -1,5 +1,5 @@
 module "vault_cluster" {
-  source                   = "git::ssh://git@github.com/bitrockteam/hashicorp-vault-baseline//modules/cluster-raft?ref=master"
+  source                   = "git::ssh://git@github.com/bitrockteam/hashicorp-vault-baseline//modules/cluster-raft?ref=nomad-acl"
   unseal_project_id        = var.unseal_project_id
   unseal_keyring           = var.unseal_keyring
   unseal_key               = var.unseal_key
