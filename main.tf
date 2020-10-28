@@ -45,7 +45,7 @@ module "nomad-cluster" {
     module.vault_cluster,
     module.consul-cluster
   ]
-  source                   = "git::ssh://git@github.com/bitrockteam/hashicorp-nomad-baseline//modules/nomad-cluster?ref=nomad-acl"
+  source                   = "git::ssh://git@github.com/bitrockteam/hashicorp-nomad-baseline//modules/nomad-cluster?ref=master"
   ssh_private_key          = var.ssh_private_key
   cluster_nodes_ids        = var.cluster_nodes_ids
   cluster_nodes            = var.cluster_nodes
