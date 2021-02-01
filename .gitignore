@@ -80,3 +80,4 @@ ssh-key.pub
 ssh-key
 *.tfvars
 .*token*
+.idea
