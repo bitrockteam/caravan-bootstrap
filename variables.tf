@@ -26,14 +26,12 @@ variable "unseal_key" {
   type    = string
   default = null
 }
-variable "cluster_nodes_ids" {
-  type = list(string)
+variable "unseal_region" {
+  type    = string
+  default = null
 }
-variable "cluster_nodes" {
-  type = map(any)
-}
-variable "cluster_nodes_public_ips" {
-  type    = map(any)
+variable "unseal_type" {
+  type    = string
   default = null
 }
 variable "nodes" {
@@ -57,10 +55,19 @@ variable "ssh_timeout" {
 variable "vault_endpoint" {
   type = string
 }
+variable "control_plane_vault_role" {
+  type = string
+}
+variable "control_plane_role_name" {
+  type = string
+}
 variable "tcp_listener_tls" {
   type    = bool
   default = false
 }
 variable "dc_name" {
+  type = string
+}
+variable "prefix" {
   type = string
 }
