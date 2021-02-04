@@ -33,6 +33,11 @@ module "vault_cluster" {
   aws_access_key = var.aws_access_key
   aws_secret_key = var.aws_secret_key
   aws_endpoint   = var.aws_endpoint
+
+  // AZURE
+  azure_tenant_id  = var.azure_tenant_id
+  azure_vault_name = var.azure_vault_name
+  azure_key_name   = var.azure_key_name
 }
 
 module "vault_cluster_agents" {
@@ -51,6 +56,9 @@ module "vault_cluster_agents" {
   ssh_timeout         = var.ssh_timeout
   aws_auto_auth       = var.agent_auto_auth_type == "aws" ? true : false
   aws_node_role       = var.aws_node_role
+  azure_auto_auth     = var.agent_auto_auth_type == "azure" ? true : false
+  azure_node_role     = var.azure_node_role
+  azure_resource      = var.azure_resource
 }
 
 module "consul-cluster" {
