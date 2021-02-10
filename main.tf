@@ -35,10 +35,10 @@ module "vault_cluster" {
   aws_endpoint   = var.aws_endpoint
 
   // AZURE
-  azure_tenant_id  = var.azure_tenant_id
-  azure_vault_name = var.azure_vault_name
-  azure_key_name   = var.azure_key_name
-  azure_client_id = var.azure_client_id
+  azure_tenant_id     = var.azure_tenant_id
+  azure_vault_name    = var.azure_vault_name
+  azure_key_name      = var.azure_key_name
+  azure_client_id     = var.azure_client_id
   azure_client_secret = var.azure_client_secret
 }
 
