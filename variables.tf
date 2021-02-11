@@ -154,13 +154,3 @@ variable "azure_resource" {
   default     = "https://management.azure.com/"
   description = "(optional) A configured Azure AD application which is used as the resource for generating MSI access tokens"
 }
-variable "azure_client_id" {
-  type        = string
-  default     = ""
-  description = "(Optional) The client id for credentials to query the Azure APIs. Currently read permissions to query compute resources are required."
-}
-variable "azure_client_secret" {
-  type        = string
-  default     = ""
-  description = "(Optional) The client secret for credentials to query the Azure APIs."
-}

@@ -35,9 +35,9 @@ module "vault_cluster" {
   aws_endpoint   = var.aws_endpoint
 
   // AZURE
-  azure_tenant_id     = var.azure_tenant_id
-  azure_vault_name    = var.azure_vault_name
-  azure_key_name      = var.azure_key_name
+  azure_tenant_id  = var.azure_tenant_id
+  azure_vault_name = var.azure_vault_name
+  azure_key_name   = var.azure_key_name
 }
 
 module "vault_cluster_agents" {
