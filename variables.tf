@@ -1,12 +1,15 @@
 // Common
 variable "control_plane_nodes" {
-  type = map(any)
+  type        = map(any)
+  description = "A map in form of 'node-name' => 'node's private IP' of the nodes to provision the cluster on"
 }
 variable "control_plane_nodes_ids" {
-  type = list(string)
+  type        = list(string)
+  description = "list of strings which are IDs of the instance resources and are used to `trigger` the provisioning of `null` resources on instance recreation"
 }
 variable "control_plane_nodes_public_ips" {
-  type = map(any)
+  type        = map(any)
+  description = "The public IPs of the node to SSH into them"
 }
 variable "ssh_private_key" {
   type = string
@@ -31,7 +34,8 @@ variable "tcp_listener_tls" {
   default = false
 }
 variable "dc_name" {
-  type = string
+  type        = string
+  description = "Name of the datacenter of the consul cluster"
 }
 variable "unseal_type" {
   type    = string
@@ -124,6 +128,8 @@ variable "aws_endpoint" {
   type    = string
   default = null
 }
+
+// AZURE
 variable "azure_tenant_id" {
   type        = string
   default     = null
