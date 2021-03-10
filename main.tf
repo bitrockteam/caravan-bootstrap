@@ -1,5 +1,5 @@
 module "vault_cluster" {
-  source                         = "git::ssh://git@github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=main"
+  source                         = "git::ssh://git@github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=feature/add-license"
   control_plane_nodes_ids        = var.control_plane_nodes_ids
   control_plane_nodes            = var.control_plane_nodes
   control_plane_nodes_public_ips = var.control_plane_nodes_public_ips
@@ -9,6 +9,8 @@ module "vault_cluster" {
   prefix                         = var.prefix
 
   unseal_type = var.unseal_type
+
+  license = var.vault_license
 
   // TRANSIT
   transit_vault_address = var.transit_vault_address
@@ -41,7 +43,7 @@ module "vault_cluster" {
 }
 
 module "vault_cluster_agents" {
-  source              = "git::ssh://git@github.com/bitrockteam/caravan-vault//modules/agent?ref=main"
+  source              = "git::ssh://git@github.com/bitrockteam/caravan-vault//modules/agent?ref=feature/add-license"
   vault_endpoint      = var.vault_endpoint
   tcp_listener_tls    = var.tcp_listener_tls
   gcp_project_id      = var.gcp_project_id
@@ -62,13 +64,15 @@ module "vault_cluster_agents" {
 }
 
 module "consul-cluster" {
-  source                   = "git::ssh://git@github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=main"
+  source                   = "git::ssh://git@github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=feature/add-license"
   ssh_private_key          = var.ssh_private_key
   cluster_nodes_ids        = var.control_plane_nodes_ids
   cluster_nodes            = var.control_plane_nodes
   cluster_nodes_public_ips = var.control_plane_nodes_public_ips
   vault_address            = module.vault_cluster.vault_address
   dc_name                  = var.dc_name
+
+  license = var.consul_license
 }
 
 module "nomad-cluster" {
@@ -76,11 +80,13 @@ module "nomad-cluster" {
     module.vault_cluster,
     module.consul-cluster
   ]
-  source                   = "git::ssh://git@github.com/bitrockteam/caravan-nomad//modules/nomad-cluster?ref=main"
+  source                   = "git::ssh://git@github.com/bitrockteam/caravan-nomad//modules/nomad-cluster?ref=feature/add-license"
   ssh_private_key          = var.ssh_private_key
   cluster_nodes_ids        = var.control_plane_nodes_ids
   cluster_nodes            = var.control_plane_nodes
   cluster_nodes_public_ips = var.control_plane_nodes_public_ips
   dc_name                  = var.dc_name
   control_plane_vault_role = var.control_plane_role_name
+
+  license = var.nomad_license
 }

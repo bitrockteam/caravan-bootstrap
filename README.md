@@ -13,10 +13,10 @@ No provider.
 
 | Name | Source | Version |
 |------|--------|---------|
-| consul-cluster | git::ssh://git@github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=main |  |
-| nomad-cluster | git::ssh://git@github.com/bitrockteam/caravan-nomad//modules/nomad-cluster?ref=main |  |
-| vault_cluster | git::ssh://git@github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=main |  |
-| vault_cluster_agents | git::ssh://git@github.com/bitrockteam/caravan-vault//modules/agent?ref=main |  |
+| consul-cluster | git::ssh://git@github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=feature/add-license |  |
+| nomad-cluster | git::ssh://git@github.com/bitrockteam/caravan-nomad//modules/nomad-cluster?ref=feature/add-license |  |
+| vault_cluster | git::ssh://git@github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=feature/add-license |  |
+| vault_cluster_agents | git::ssh://git@github.com/bitrockteam/caravan-vault//modules/agent?ref=feature/add-license |  |
 
 ## Resources
 
@@ -49,12 +49,14 @@ No resources.
 | azure\_resource | (optional) A configured Azure AD application which is used as the resource for generating MSI access tokens | `string` | `"https://management.azure.com/"` | no |
 | azure\_tenant\_id | (optional) The tenant id for the Azure Active Directory organization. | `string` | `null` | no |
 | azure\_vault\_name | (optional) The Key Vault vault to use the encryption keys for encryption and decryption. | `string` | `null` | no |
+| consul\_license | Consul Enterprise License | `string` | `""` | no |
 | gcp\_key | n/a | `string` | `null` | no |
 | gcp\_keyring | n/a | `string` | `null` | no |
 | gcp\_node\_role | n/a | `string` | `null` | no |
 | gcp\_project\_id | n/a | `string` | `null` | no |
 | gcp\_region | GCP | `string` | `null` | no |
 | gcp\_service\_account | n/a | `string` | `null` | no |
+| nomad\_license | Nomad Enterprise License | `string` | `""` | no |
 | oci\_crypto\_endpoint | n/a | `string` | `null` | no |
 | oci\_key | OCI | `string` | `null` | no |
 | oci\_management\_endpoint | n/a | `string` | `null` | no |
@@ -64,6 +66,7 @@ No resources.
 | transit\_vault\_address | Transit | `any` | `null` | no |
 | transit\_vault\_token | n/a | `string` | `null` | no |
 | unseal\_type | n/a | `string` | `null` | no |
+| vault\_license | Vault Enterprise License | `string` | `""` | no |
 
 ## Outputs
 
