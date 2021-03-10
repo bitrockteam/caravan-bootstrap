@@ -160,3 +160,20 @@ variable "azure_resource" {
   default     = "https://management.azure.com/"
   description = "(optional) A configured Azure AD application which is used as the resource for generating MSI access tokens"
 }
+
+// Enterprise
+variable "vault_license" {
+  type        = string
+  default     = ""
+  description = "Vault Enterprise License"
+}
+variable "nomad_license" {
+  type        = string
+  default     = ""
+  description = "Nomad Enterprise License"
+}
+variable "consul_license" {
+  type        = string
+  default     = ""
+  description = "Consul Enterprise License"
+}

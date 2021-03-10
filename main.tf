@@ -10,6 +10,8 @@ module "vault_cluster" {
 
   unseal_type = var.unseal_type
 
+  license = var.vault_license
+
   // TRANSIT
   transit_vault_address = var.transit_vault_address
   transit_mount_path    = var.transit_mount_path
@@ -69,6 +71,8 @@ module "consul-cluster" {
   cluster_nodes_public_ips = var.control_plane_nodes_public_ips
   vault_address            = module.vault_cluster.vault_address
   dc_name                  = var.dc_name
+
+  license = var.consul_license
 }
 
 module "nomad-cluster" {
@@ -83,4 +87,6 @@ module "nomad-cluster" {
   cluster_nodes_public_ips = var.control_plane_nodes_public_ips
   dc_name                  = var.dc_name
   control_plane_vault_role = var.control_plane_role_name
+
+  license = var.nomad_license
 }
