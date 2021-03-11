@@ -13,7 +13,7 @@ No provider.
 
 | Name | Source | Version |
 |------|--------|---------|
-| consul-cluster | git::ssh://git@github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=main |  |
+| consul-cluster | git::ssh://git@github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=grafana-dashboard |  |
 | nomad-cluster | git::ssh://git@github.com/bitrockteam/caravan-nomad//modules/nomad-cluster?ref=main |  |
 | vault_cluster | git::ssh://git@github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=main |  |
 | vault_cluster_agents | git::ssh://git@github.com/bitrockteam/caravan-vault//modules/agent?ref=main |  |
