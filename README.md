@@ -31,6 +31,7 @@ No resources.
 | control\_plane\_nodes\_public\_ips | The public IPs of the node to SSH into them | `map(any)` | n/a | yes |
 | control\_plane\_role\_name | n/a | `string` | n/a | yes |
 | dc\_name | Name of the datacenter of the consul cluster | `string` | n/a | yes |
+| external\_domain | n/a | `string` | n/a | yes |
 | prefix | n/a | `string` | n/a | yes |
 | ssh\_private\_key | n/a | `string` | n/a | yes |
 | ssh\_timeout | n/a | `string` | n/a | yes |
