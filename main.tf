@@ -64,15 +64,15 @@ module "vault_cluster_agents" {
 }
 
 module "consul-cluster" {
-  source                   = "git::ssh://git@github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=main"
-  ssh_private_key          = var.ssh_private_key
-  cluster_nodes_ids        = var.control_plane_nodes_ids
-  cluster_nodes            = var.control_plane_nodes
-  cluster_nodes_public_ips = var.control_plane_nodes_public_ips
-  vault_address            = module.vault_cluster.vault_address
-  dc_name                  = var.dc_name
-
-  license = var.consul_license
+  source                         = "git::ssh://git@github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=main"
+  ssh_private_key                = var.ssh_private_key
+  cluster_nodes_ids              = var.control_plane_nodes_ids
+  cluster_nodes                  = var.control_plane_nodes
+  cluster_nodes_public_ips       = var.control_plane_nodes_public_ips
+  vault_address                  = module.vault_cluster.vault_address
+  dc_name                        = var.dc_name
+  service_dashboard_url_template = "https://grafana.${var.prefix}.${var.external_domain}/d/kDRlnfcGk/consul-connect-services?orgId=1&var-service={{Service.Name}}&var-namespace={{Service.Namespace}}&var-dc={{Datacenter}}"
+  license                        = var.consul_license
 }
 
 module "nomad-cluster" {

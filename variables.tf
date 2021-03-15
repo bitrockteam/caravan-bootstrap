@@ -23,6 +23,9 @@ variable "ssh_timeout" {
 variable "prefix" {
   type = string
 }
+variable "external_domain" {
+  type = string
+}
 variable "vault_endpoint" {
   type = string
 }
