@@ -1,5 +1,5 @@
 module "vault_cluster" {
-  source                         = "git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=refs/tags/v0.3.4"
+  source                         = "git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=feat/add_consul_encryption"
   control_plane_nodes_ids        = var.control_plane_nodes_ids
   control_plane_nodes            = var.control_plane_nodes
   control_plane_nodes_public_ips = var.control_plane_nodes_public_ips
@@ -43,7 +43,7 @@ module "vault_cluster" {
 }
 
 module "vault_cluster_agents" {
-  source              = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=refs/tags/v0.3.4"
+  source              = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=feat/add_consul_encryption"
   vault_endpoint      = var.vault_endpoint
   tcp_listener_tls    = var.tcp_listener_tls
   gcp_project_id      = var.gcp_project_id
@@ -64,7 +64,7 @@ module "vault_cluster_agents" {
 }
 
 module "consul-cluster" {
-  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=refs/tags/v0.1.0"
+  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=feat/add_encryption"
   ssh_private_key                = var.ssh_private_key
   cluster_nodes_ids              = var.control_plane_nodes_ids
   cluster_nodes                  = var.control_plane_nodes
@@ -73,6 +73,7 @@ module "consul-cluster" {
   dc_name                        = var.dc_name
   service_dashboard_url_template = "https://grafana.${var.prefix}.${var.external_domain}/d/kDRlnfcGk/consul-connect-services?orgId=1&var-service={{Service.Name}}&var-namespace={{Service.Namespace}}&var-dc={{Datacenter}}"
   license                        = var.consul_license
+  encryption_key                 = module.vault_cluster.consul_enc_key
 }
 
 module "nomad-cluster" {
