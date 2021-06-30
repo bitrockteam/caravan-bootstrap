@@ -64,7 +64,7 @@ module "vault_cluster_agents" {
 }
 
 module "consul-cluster" {
-  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=v0.1.5"
+  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=v0.1.6"
   ssh_private_key                = var.ssh_private_key
   cluster_nodes_ids              = var.control_plane_nodes_ids
   cluster_nodes                  = var.control_plane_nodes
