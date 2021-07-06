@@ -1,5 +1,5 @@
 module "vault_cluster" {
-  source                         = "git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=v0.3.6"
+  source                         = "git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=add-token-output"
   control_plane_nodes_ids        = var.control_plane_nodes_ids
   control_plane_nodes            = var.control_plane_nodes
   control_plane_nodes_public_ips = var.control_plane_nodes_public_ips
@@ -43,7 +43,7 @@ module "vault_cluster" {
 }
 
 module "vault_cluster_agents" {
-  source              = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=v0.3.6"
+  source              = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=add-token-output"
   vault_endpoint      = var.vault_endpoint
   tcp_listener_tls    = var.tcp_listener_tls
   gcp_project_id      = var.gcp_project_id
@@ -64,7 +64,7 @@ module "vault_cluster_agents" {
 }
 
 module "consul-cluster" {
-  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=v0.1.6"
+  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=remove-vars"
   ssh_private_key                = var.ssh_private_key
   cluster_nodes_ids              = var.control_plane_nodes_ids
   cluster_nodes                  = var.control_plane_nodes
