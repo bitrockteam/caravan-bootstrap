@@ -66,6 +66,10 @@ module "vault_cluster_agents" {
 module "consul-cluster" {
   source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=remove-vars"
   ssh_private_key                = var.ssh_private_key
+  ssh_bastion_host               = var.ssh_bastion_host
+  ssh_bastion_port               = var.ssh_bastion_port
+  ssh_bastion_private_key        = var.ssh_bastion_private_key
+  ssh_bastion_user               = var.ssh_bastion_user
   cluster_nodes_ids              = var.control_plane_nodes_ids
   cluster_nodes                  = var.control_plane_nodes
   cluster_nodes_public_ips       = var.control_plane_nodes_public_ips
@@ -83,6 +87,10 @@ module "nomad-cluster" {
   ]
   source                   = "git::https://github.com/bitrockteam/caravan-nomad//modules/nomad-cluster?ref=refs/tags/v0.1.10"
   ssh_private_key          = var.ssh_private_key
+  ssh_bastion_host         = var.ssh_bastion_host
+  ssh_bastion_port         = var.ssh_bastion_port
+  ssh_bastion_private_key  = var.ssh_bastion_private_key
+  ssh_bastion_user         = var.ssh_bastion_user
   cluster_nodes_ids        = var.control_plane_nodes_ids
   cluster_nodes            = var.control_plane_nodes
   cluster_nodes_public_ips = var.control_plane_nodes_public_ips

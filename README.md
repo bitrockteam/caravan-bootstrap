@@ -61,6 +61,10 @@ No resources.
 | <a name="input_oci_crypto_endpoint"></a> [oci\_crypto\_endpoint](#input\_oci\_crypto\_endpoint) | n/a | `string` | `null` | no |
 | <a name="input_oci_key"></a> [oci\_key](#input\_oci\_key) | OCI | `string` | `null` | no |
 | <a name="input_oci_management_endpoint"></a> [oci\_management\_endpoint](#input\_oci\_management\_endpoint) | n/a | `string` | `null` | no |
+| <a name="input_ssh_bastion_host"></a> [ssh\_bastion\_host](#input\_ssh\_bastion\_host) | n/a | `string` | `null` | no |
+| <a name="input_ssh_bastion_port"></a> [ssh\_bastion\_port](#input\_ssh\_bastion\_port) | n/a | `string` | `"22"` | no |
+| <a name="input_ssh_bastion_private_key"></a> [ssh\_bastion\_private\_key](#input\_ssh\_bastion\_private\_key) | n/a | `string` | `null` | no |
+| <a name="input_ssh_bastion_user"></a> [ssh\_bastion\_user](#input\_ssh\_bastion\_user) | n/a | `string` | `null` | no |
 | <a name="input_tcp_listener_tls"></a> [tcp\_listener\_tls](#input\_tcp\_listener\_tls) | n/a | `bool` | `false` | no |
 | <a name="input_transit_key"></a> [transit\_key](#input\_transit\_key) | n/a | `string` | `null` | no |
 | <a name="input_transit_mount_path"></a> [transit\_mount\_path](#input\_transit\_mount\_path) | n/a | `string` | `null` | no |

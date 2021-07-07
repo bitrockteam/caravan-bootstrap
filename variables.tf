@@ -20,6 +20,22 @@ variable "ssh_user" {
 variable "ssh_timeout" {
   type = string
 }
+variable "ssh_bastion_host" {
+  type    = string
+  default = null
+}
+variable "ssh_bastion_port" {
+  type    = string
+  default = "22"
+}
+variable "ssh_bastion_private_key" {
+  type    = string
+  default = null
+}
+variable "ssh_bastion_user" {
+  type    = string
+  default = null
+}
 variable "prefix" {
   type = string
 }
@@ -124,8 +140,9 @@ variable "aws_access_key" {
   default = null
 }
 variable "aws_secret_key" {
-  type    = string
-  default = null
+  type      = string
+  default   = null
+  sensitive = true
 }
 variable "aws_endpoint" {
   type    = string
