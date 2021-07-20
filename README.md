@@ -15,8 +15,8 @@ No providers.
 |------|--------|---------|
 | <a name="module_consul-cluster"></a> [consul-cluster](#module\_consul-cluster) | git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster | remove-vars |
 | <a name="module_nomad-cluster"></a> [nomad-cluster](#module\_nomad-cluster) | git::https://github.com/bitrockteam/caravan-nomad//modules/nomad-cluster | refs/tags/v0.1.10 |
-| <a name="module_vault_cluster"></a> [vault\_cluster](#module\_vault\_cluster) | git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft | v0.3.7 |
-| <a name="module_vault_cluster_agents"></a> [vault\_cluster\_agents](#module\_vault\_cluster\_agents) | git::https://github.com/bitrockteam/caravan-vault//modules/agent | v0.3.7 |
+| <a name="module_vault_cluster"></a> [vault\_cluster](#module\_vault\_cluster) | git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft | fix-local-exec-bastion |
+| <a name="module_vault_cluster_agents"></a> [vault\_cluster\_agents](#module\_vault\_cluster\_agents) | git::https://github.com/bitrockteam/caravan-vault//modules/agent | fix-local-exec-bastion |
 
 ## Resources
 
