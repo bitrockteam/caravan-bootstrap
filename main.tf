@@ -4,6 +4,10 @@ module "vault_cluster" {
   control_plane_nodes            = var.control_plane_nodes
   control_plane_nodes_public_ips = var.control_plane_nodes_public_ips
   ssh_private_key                = var.ssh_private_key
+  ssh_bastion_host               = var.ssh_bastion_host
+  ssh_bastion_port               = var.ssh_bastion_port
+  ssh_bastion_private_key        = var.ssh_bastion_private_key
+  ssh_bastion_user               = var.ssh_bastion_user
   ssh_user                       = var.ssh_user
   ssh_timeout                    = var.ssh_timeout
   prefix                         = var.prefix
@@ -43,24 +47,28 @@ module "vault_cluster" {
 }
 
 module "vault_cluster_agents" {
-  source              = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=add-token-output"
-  vault_endpoint      = var.vault_endpoint
-  tcp_listener_tls    = var.tcp_listener_tls
-  gcp_project_id      = var.gcp_project_id
-  gcp_auto_auth       = var.agent_auto_auth_type == "gcp" ? true : false
-  gcp_node_role       = var.gcp_node_role
-  gcp_service_account = var.gcp_service_account
-  nodes_ids           = var.control_plane_nodes_ids
-  nodes               = var.control_plane_nodes
-  nodes_public_ips    = var.control_plane_nodes_public_ips
-  ssh_private_key     = var.ssh_private_key
-  ssh_user            = var.ssh_user
-  ssh_timeout         = var.ssh_timeout
-  aws_auto_auth       = var.agent_auto_auth_type == "aws" ? true : false
-  aws_node_role       = var.aws_node_role
-  azure_auto_auth     = var.agent_auto_auth_type == "azure" ? true : false
-  azure_node_role     = var.azure_node_role
-  azure_resource      = var.azure_resource
+  source                  = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=add-token-output"
+  vault_endpoint          = var.vault_endpoint
+  tcp_listener_tls        = var.tcp_listener_tls
+  gcp_project_id          = var.gcp_project_id
+  gcp_auto_auth           = var.agent_auto_auth_type == "gcp" ? true : false
+  gcp_node_role           = var.gcp_node_role
+  gcp_service_account     = var.gcp_service_account
+  nodes_ids               = var.control_plane_nodes_ids
+  nodes                   = var.control_plane_nodes
+  nodes_public_ips        = var.control_plane_nodes_public_ips
+  ssh_private_key         = var.ssh_private_key
+  ssh_bastion_host        = var.ssh_bastion_host
+  ssh_bastion_port        = var.ssh_bastion_port
+  ssh_bastion_private_key = var.ssh_bastion_private_key
+  ssh_bastion_user        = var.ssh_bastion_user
+  ssh_user                = var.ssh_user
+  ssh_timeout             = var.ssh_timeout
+  aws_auto_auth           = var.agent_auto_auth_type == "aws" ? true : false
+  aws_node_role           = var.aws_node_role
+  azure_auto_auth         = var.agent_auto_auth_type == "azure" ? true : false
+  azure_node_role         = var.azure_node_role
+  azure_resource          = var.azure_resource
 }
 
 module "consul-cluster" {
