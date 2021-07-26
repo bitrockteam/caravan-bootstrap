@@ -1,5 +1,5 @@
 module "vault_cluster" {
-  source                         = "git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=fix-local-exec-bastion"
+  source                         = "git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=refs/tags/v0.3.16"
   control_plane_nodes_ids        = var.control_plane_nodes_ids
   control_plane_nodes            = var.control_plane_nodes
   control_plane_nodes_public_ips = var.control_plane_nodes_public_ips
@@ -47,7 +47,7 @@ module "vault_cluster" {
 }
 
 module "vault_cluster_agents" {
-  source                  = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=fix-local-exec-bastion"
+  source                  = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=refs/tags/v0.3.16"
   vault_endpoint          = var.vault_endpoint
   tcp_listener_tls        = var.tcp_listener_tls
   gcp_project_id          = var.gcp_project_id
@@ -72,7 +72,7 @@ module "vault_cluster_agents" {
 }
 
 module "consul-cluster" {
-  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=remove-vars"
+  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=refs/tags/v0.1.11"
   ssh_private_key                = var.ssh_private_key
   ssh_bastion_host               = var.ssh_bastion_host
   ssh_bastion_port               = var.ssh_bastion_port
