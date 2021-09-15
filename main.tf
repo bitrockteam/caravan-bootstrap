@@ -89,6 +89,7 @@ module "consul-cluster" {
 }
 
 module "nomad-cluster" {
+  count = var.enable_nomad ? 1 : 0
   depends_on = [
     module.vault_cluster,
     module.consul-cluster
