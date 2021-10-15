@@ -47,8 +47,9 @@ module "vault_cluster" {
 }
 
 module "vault_cluster_agents" {
-  source                  = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=refs/tags/v0.3.16"
+  source                  = "git::https://github.com/bitrockteam/caravan-vault//modules/agent?ref=feat/pluggable_nomad"
   vault_endpoint          = var.vault_endpoint
+  enable_nomad            = var.enable_nomad
   tcp_listener_tls        = var.tcp_listener_tls
   gcp_project_id          = var.gcp_project_id
   gcp_auto_auth           = var.agent_auto_auth_type == "gcp" ? true : false
