@@ -64,6 +64,11 @@ variable "agent_auto_auth_type" {
   type    = string
   default = null
 }
+variable "enable_nomad" {
+  type        = bool
+  default     = true
+  description = "Enables and setup Nomad cluster"
+}
 
 // Transit
 variable "transit_vault_address" {
