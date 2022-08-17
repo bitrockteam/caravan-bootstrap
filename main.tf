@@ -73,7 +73,7 @@ module "vault_cluster_agents" {
 }
 
 module "consul-cluster" {
-  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=refs/tags/v0.1.11"
+  source                         = "git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster?ref=refs/tags/v0.1.14"
   ssh_user                       = var.ssh_user
   ssh_private_key                = var.ssh_private_key
   ssh_bastion_host               = var.ssh_bastion_host
@@ -96,7 +96,7 @@ module "nomad-cluster" {
     module.vault_cluster,
     module.consul-cluster
   ]
-  source                   = "git::https://github.com/bitrockteam/caravan-nomad//modules/nomad-cluster?ref=refs/tags/v0.1.10"
+  source                   = "git::https://github.com/bitrockteam/caravan-nomad//modules/nomad-cluster?ref=refs/tags/v0.1.18"
   ssh_user                 = var.ssh_user
   ssh_private_key          = var.ssh_private_key
   ssh_bastion_host         = var.ssh_bastion_host
