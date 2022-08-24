@@ -1,5 +1,5 @@
 module "vault_cluster" {
-  source                         = "git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=refs/tags/v0.3.20"
+  source                         = "git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft?ref=refs/tags/v0.3.24"
   control_plane_nodes_ids        = var.control_plane_nodes_ids
   control_plane_nodes            = var.control_plane_nodes
   control_plane_nodes_public_ips = var.control_plane_nodes_public_ips

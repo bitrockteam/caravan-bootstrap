@@ -13,10 +13,10 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_consul-cluster"></a> [consul-cluster](#module\_consul-cluster) | git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster | refs/tags/v0.1.11 |
-| <a name="module_nomad-cluster"></a> [nomad-cluster](#module\_nomad-cluster) | git::https://github.com/bitrockteam/caravan-nomad//modules/nomad-cluster | refs/tags/v0.1.10 |
-| <a name="module_vault_cluster"></a> [vault\_cluster](#module\_vault\_cluster) | git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft | refs/tags/v0.3.17 |
-| <a name="module_vault_cluster_agents"></a> [vault\_cluster\_agents](#module\_vault\_cluster\_agents) | git::https://github.com/bitrockteam/caravan-vault//modules/agent | refs/tags/v0.3.16 |
+| <a name="module_consul-cluster"></a> [consul-cluster](#module\_consul-cluster) | git::https://github.com/bitrockteam/caravan-consul//modules/consul-cluster | refs/tags/v0.1.14 |
+| <a name="module_nomad-cluster"></a> [nomad-cluster](#module\_nomad-cluster) | git::https://github.com/bitrockteam/caravan-nomad//modules/nomad-cluster | refs/tags/v0.1.18 |
+| <a name="module_vault_cluster"></a> [vault\_cluster](#module\_vault\_cluster) | git::https://github.com/bitrockteam/caravan-vault//modules/cluster-raft | refs/tags/v0.3.24 |
+| <a name="module_vault_cluster_agents"></a> [vault\_cluster\_agents](#module\_vault\_cluster\_agents) | git::https://github.com/bitrockteam/caravan-vault//modules/agent | refs/tags/v0.3.20 |
 
 ## Resources
 
@@ -51,6 +51,7 @@ No resources.
 | <a name="input_azure_tenant_id"></a> [azure\_tenant\_id](#input\_azure\_tenant\_id) | (optional) The tenant id for the Azure Active Directory organization. | `string` | `null` | no |
 | <a name="input_azure_vault_name"></a> [azure\_vault\_name](#input\_azure\_vault\_name) | (optional) The Key Vault vault to use the encryption keys for encryption and decryption. | `string` | `null` | no |
 | <a name="input_consul_license"></a> [consul\_license](#input\_consul\_license) | Consul Enterprise License | `string` | `""` | no |
+| <a name="input_enable_nomad"></a> [enable\_nomad](#input\_enable\_nomad) | Enables and setup Nomad cluster | `bool` | `true` | no |
 | <a name="input_gcp_key"></a> [gcp\_key](#input\_gcp\_key) | n/a | `string` | `null` | no |
 | <a name="input_gcp_keyring"></a> [gcp\_keyring](#input\_gcp\_keyring) | n/a | `string` | `null` | no |
 | <a name="input_gcp_node_role"></a> [gcp\_node\_role](#input\_gcp\_node\_role) | n/a | `string` | `null` | no |
